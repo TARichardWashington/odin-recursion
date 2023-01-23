@@ -28,7 +28,7 @@ function mergeSort(unsortedArray) {
         }
     }
 
-    // if we have values left over on the left or right 
+    // If we have values left over on the left or right 
     // they must already be sorted so we can tack them on
     while (left.length) {
         sortedArray.push(left.shift());
