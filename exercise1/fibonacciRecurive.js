@@ -1,15 +1,20 @@
-function fibs(number) {
-    let result = [];
-    for (let i = 0; i < number; i++) {
-        if (i === 0) {
-            result.push(0);
-        } else if (i === 1) {
-            result.push(1);
-        } else {
-            result.push(result[i - 1] + result[i - 2]);
-        }
+function fibsRec(number) {
+    if (number < 1) {
+        throw new Error("Can't compute a series of length less than 1");
+    } else if (number === 1) {
+        return [0];
+    } else if (number === 2) {
+        return [0, 1];
     }
-    return result;
-}
+    else {
+        var result = fibsRec(number - 1);
+        result.push(result[result.length - 1] + result[result.length - 2]);
+        return result;
+    }
+};
 
-console.log(fibs(10));
+//console.log(fibsRec(0));
+//console.log(fibsRec(1));
+//console.log(fibsRec(5));
+console.log(fibsRec(8));
+//console.log(fibsRec(10));
